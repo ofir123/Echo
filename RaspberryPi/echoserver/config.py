@@ -1,6 +1,6 @@
 # Control server details.
 IP = '192.168.10.32'
-PORT = '6666'
+PORT = '9999'
 # Computer details.
 COMPUTER_IP = '192.168.10.10'
 COMPUTER_PORT = '7777'

@@ -15,8 +15,7 @@ def _get_request(api_path):
 
 
 def lambda_handler(request, context):
-    directive = request['directive']
-    header = directive['header']
+    header = request['header']
     if header['namespace'] == 'Alexa.Discovery' and header['name'] == 'Discover':
         return handle_discovery(request, context)
 
@@ -25,7 +24,7 @@ def lambda_handler(request, context):
 
 
 def handle_discovery(request, context):
-    header = request['directive']['header']
+    header = request['header']
     header['name'] = 'Discover.Response'
     payload = {
         "endpoints": [
@@ -55,7 +54,7 @@ def handle_discovery(request, context):
 
 
 def handle_power_controller(request, context):
-    header = request['directive']['header']
+    header = request['header']
     receiver_command = 'TurnOn' if header['name'] == 'on' else 'off'
     _get_request('/receiver/{}'.format(receiver_command))
     header['name'] = 'Response'
