@@ -1,7 +1,7 @@
-Echo
+EchoServer
 ====================
 
-A collection of Python scripts for Amazon Echo, in order to make every house super smart and generally awesome!
+A simple Flask server which communicates with Amazon Echo, in order to make every house super smart and generally awesome!
 
 Ingredients
 ====================
@@ -11,13 +11,16 @@ Ingredients
 * Yamaha RX-V Receiver (for the Receiver control scripts)
 * LIFX bulbs (for the cool lighting effects)
 
-Scripts
+Setup
 ====================
-* media_server.py - Runs on the server controls sound output and browser.
-* control_server.py - Runs on the Raspberry Pi (which is connected to the TV through HDMI), and listens for commands.
-* computer.py - Turns on the TV and the receiver, switches the receiver to the computer's channel and sets the sound settings in both the receiver and the computer.
-* music.py - Same as computer.py, but with different sound settings for the receiver.
-* off.py - Turns everything off (not working with the current TV since LG sucks and doesn't support CEC standby).
+Just go to the `Computer` directory, and run: 
+```
+python setup.py develop
+python echoserver/run_server.py
+```
+To get the server going on your computer.
+
+Then, do the same with the `RaspberryPi` directory on your RaspberryPi device.
 
 Intents
 ====================

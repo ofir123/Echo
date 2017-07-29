@@ -113,6 +113,9 @@ def main():
                     'YOUTUBE_STOP', 'YOUTUBE_PREVIOUS', 'YOUTUBE_NEXT', 'YOUTUBE_PAUSE']:
                 # Play YouTube in a dedicated browser using the media server.
                 media_server_socket.send_string(message)
+            elif message.startswith('VIDEO_PLAY_') or message == 'VIDEO_STOP':
+                # Play video in a dedicated process using the media server.
+                media_server_socket.send_string(message)
             else:
                 # Ignore the command.
                 log.info('Got a weird command: {}. Moving on...'.format(message))
