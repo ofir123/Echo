@@ -38,7 +38,7 @@ def tv_on():
 
 
 @app_views.route('/tv/off', methods=['GET'])
-def tv_on():
+def tv_off():
     logger.info('Turning TV off!')
     os.system('echo "standby 0" | cec-client -s')
     return ''
