@@ -1,0 +1,12 @@
+[Unit]
+Description=EchoServer
+After=network.service
+
+[Service]
+Type=simple
+TimeoutStartSec=0
+Environment=TERM=dumb
+ExecStart=/usr/bin/echoserverd
+
+[Install]
+WantedBy=multi-user.target
